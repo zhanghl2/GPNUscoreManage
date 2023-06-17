@@ -1,0 +1,9 @@
+"D:\CLion 2023.1.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/CLion 2023.1.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\ccccccc -B D:\ccccccc\cmake-build-debug
+CMake Error at CMakeLists.txt:22 (add_executable):
+  The target name "学生成绩数据库" is reserved or not valid for
+  certain CMake features, such as generator expressions, and may result in
+  undefined behavior.
+
+
+-- Configuring incomplete, errors occurred!
+See also "D:/ccccccc/cmake-build-debug/CMakeFiles/CMakeOutput.log".

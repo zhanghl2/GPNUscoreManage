@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.25)
+project(ccccccc)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(ccccccc main.cpp)
+
+add_executable(11123 11123.cpp)
+add_executable(login_log login_log.txt)
+add_executable(CMakeLists CMakeLists.txt)
+add_executable(1_1 src/1_1.txt)
+add_executable(user_credentials user_credentials.txt)
+add_executable(main main.cpp)
+add_executable(src src/)
+add_executable(1 src/1.md)
+
+add_executable(1_2 1_2.txt)
+add_executable(2_1 2_1.txt)
+add_executable(2_2 2_2.txt)
+add_executable(3_1 3_1.txt)
+add_executable(3_2 3_2.txt)
+add_executable(学生成绩数据库 学生成绩数据库.dat)
+add_executable(Menu Menu.h)
+add_executable(AdminLog AdminLog.h)
+add_executable(TXTtoDATtoCSV TXTtoDATtoCSV.h)
+add_executable(StudentLib StudentLib.h)
+
+add_executable(scoreProcessor scoreProcessor.h)
+add_executable(StudentManagementSystem StudentManagementSystem.h)
+add_executable(StudentsManagerMenu StudentsManagerMenu.h)
+add_executable(test test.c)
+add_executable(README src/README.md)
