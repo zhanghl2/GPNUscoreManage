@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(ccccccc main.cpp)
 
-add_executable(11123 11123.cpp)
+add_executable(11123 Student.cpp)
 add_executable(login_log login_log.txt)
 add_executable(CMakeLists CMakeLists.txt)
 add_executable(1_1 src/1_1.txt)
@@ -30,3 +30,4 @@ add_executable(StudentManagementSystem StudentManagementSystem.h)
 add_executable(StudentsManagerMenu StudentsManagerMenu.h)
 add_executable(test test.c)
 add_executable(README src/README.md)
+add_executable(Student Student.cpp)
