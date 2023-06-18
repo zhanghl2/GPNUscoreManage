@@ -208,7 +208,7 @@ void scorequery(struct stuscore* p_stuscorelib)
     char* tempname;
     int choice;
     long long int tempnumber;
-    int i, k, count;
+    int i, k, count, count2=0;
     count = readscore(p_stuscorelib);			// 读出学生成绩，并返回学生成绩记录数
     if (count == 0)
     {
@@ -267,17 +267,24 @@ void scorequery(struct stuscore* p_stuscorelib)
                     continue;
                 else
                 {
+                    count2++;
                     printrecode(p_stuscorelib + i, 1);
-                    printf("查询完毕，按任意键继续");
-                    getch();
-                    break;
+//                    printf("查询完毕，按任意键继续");
+//                    getch();
+//                    break;
                 }
             }
             if (i == count)
             {
-                printf("没有查询到该学号同学的成绩，请按任意键继续!");
-                getch();
-                system("cls");
+                if (count2 == 0) {
+                    printf("没有查询到该学号同学的成绩，请按任意键继续!");
+                    getch();
+                    system("cls");
+                }else{
+                    printf("查询完毕，按任意键继续");
+                    getch();
+                    break;
+                }
             }
         }
         else
