@@ -127,6 +127,7 @@ void scoreinput(struct stuscore* p_stuscorelib)
 void scoremodify(struct stuscore* p_stuscorelib)
 {
     int i, j, k, m = 0, count;
+    int tempterm,tempterm1 ;                                  // 学期比较
     long long int tempnumber, tempnumber1;
     count = readscore(p_stuscorelib);				// 读出学生成绩，并返回学生成绩记录数
     if (count == 0) {
@@ -136,10 +137,12 @@ void scoremodify(struct stuscore* p_stuscorelib)
     }
     printf("请输入要修改成绩记录的学生学号：");
     scanf("%lld", &tempnumber);
+    printf("请输入要修改成绩记录的学期（1为第一学期，2为第二学期）：");
+    scanf("%d", &tempterm);
     fflush(stdin);
     for (i = 0; i < count; i++)
     {
-        if (tempnumber != p_stuscorelib[i].number)
+        if (tempnumber != p_stuscorelib[i].number || tempterm != p_stuscorelib[i].to)
             continue;
         else
         {
@@ -149,8 +152,8 @@ void scoremodify(struct stuscore* p_stuscorelib)
             printf("------------------------\n");
             printf("学生学号：");
             scanf("%lld", &p_stuscorelib[i].number);
-
             tempnumber1 = p_stuscorelib[i].number;	 //保存新输入的学生学号以便与更新后的班级学号比较
+            tempterm1 = p_stuscorelib[i].to;	 //保存新输入的学生学号以便与更新后的班级学号比较
             fflush(stdin);
             printf("学生名字：");
             gets(p_stuscorelib[i].name);
@@ -185,7 +188,7 @@ void scoremodify(struct stuscore* p_stuscorelib)
             }
             fclose(fp);						// 成绩修改成功，写入文件后关闭文件
             for (k = 0; k < count; k++)
-                if (tempnumber1 == p_stuscorelib[k].number) m++;
+                if (tempnumber1 == p_stuscorelib[k].number&&tempterm1 == p_stuscorelib[k].to) m++;                  //学号和学期都相同的话肯定重号了
             if (m > 1)
                 printf("管理员注意----有[%d]位同学的学号重号了！ 请按任意键返货主菜单重新进行修改！", m);
             else
