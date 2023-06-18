@@ -452,6 +452,7 @@ void scoredelete(struct stuscore* p_stuscorelib)
 {
     int i, j, count;
     long long int tempnumber;
+    int tempterm;
     char ch;
     count = readscore(p_stuscorelib);		// 读取学生成绩，并返回学生成绩记录数
     if (count == 0)
@@ -472,9 +473,12 @@ void scoredelete(struct stuscore* p_stuscorelib)
             printf("请输入要删除成绩记录的学生学号（输入无效学号返回主菜单）:");
             scanf("%lld", &tempnumber);
             fflush(stdin);
+            printf("请输入要删除成绩记录的学生学期:");
+            scanf("%d", &tempterm);
+            fflush(stdin);
             for (i = 0; i < count; i++)
             {
-                if (tempnumber != p_stuscorelib[i].number)
+                if (tempnumber != p_stuscorelib[i].number||tempterm!=p_stuscorelib[i].to)
                     continue;
                 else
                 {
