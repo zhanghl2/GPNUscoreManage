@@ -328,19 +328,19 @@ void adminSelectChoice() {
         scanf("%d", &choice);
         switch (choice) {
             case 1:
-                addUser(users, &userCount);
+                addUser(users, &userCount);                           //添加管理员用户
                 break;
             case 2:
-                changePassword(users, userCount);
+                changePassword(users, userCount);                     //修改管理员密码
                 break;
             case 3:
-                deleteUser();
+                deleteUser();                                         //删除管理员用户
                 break;
             case 4:
-                displayRecentLoginLogs();
+                displayRecentLoginLogs();                             //显示登录日志
                 break;
             case 5:
-                flag1 = 1;
+                flag1 = 1;                                            //进入学生成绩管理系统
                 break;
             default:
                 printf("\t\t	<没有出现此选项，按任意键重新选择！>");
