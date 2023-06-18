@@ -87,17 +87,30 @@ void showMenu() {
     printf("\t\t	请按数字键1~8，进行相应操作： ");
 }
 
-void showExitScreen(){
+void showExitScreen() {
     system("cls");
     printf("\n\n\n\n\n\n\n\n");
-    printf("\t\t\t ############################\n");
-    printf("\t\t\t #                          #\n");
-    printf("\t\t\t # -- 已退出成绩管理系统 -- #\n");
-    printf("\t\t\t # --     感谢使用！     -- #\n");
-    printf("\t\t\t #                          #\n");
-    printf("\t\t\t ############################\n");
-    getch();
-
+    printf("                                                                                                                          \n");
+    printf("                                                                                                                               \n");
+    printf("BBBBBBBBBBBBBBBBB   YYYYYYY       YYYYYYYEEEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBB   YYYYYYY       YYYYYYYEEEEEEEEEEEEEEEEEEEEEE\n");
+    printf("B::::::::::::::::B  Y:::::Y       Y:::::YE::::::::::::::::::::EB::::::::::::::::B  Y:::::Y       Y:::::YE::::::::::::::::::::E\n");
+    printf("B::::::BBBBBB:::::B Y:::::Y       Y:::::YE::::::::::::::::::::EB::::::BBBBBB:::::B Y:::::Y       Y:::::YE::::::::::::::::::::E\n");
+    printf("BB:::::B     B:::::BY::::::Y     Y::::::YEE::::::EEEEEEEEE::::EBB:::::B     B:::::BY::::::Y     Y::::::YEE::::::EEEEEEEEE::::E\n");
+    printf("  B::::B     B:::::BYYY:::::Y   Y:::::YYY  E:::::E       EEEEEE  B::::B     B:::::BYYY:::::Y   Y:::::YYY  E:::::E       EEEEEE\n");
+    printf("  B::::B     B:::::B   Y:::::Y Y:::::Y     E:::::E               B::::B     B:::::B   Y:::::Y Y:::::Y     E:::::E             \n");
+    printf("  B::::BBBBBB:::::B     Y:::::Y:::::Y      E::::::EEEEEEEEEE     B::::BBBBBB:::::B     Y:::::Y:::::Y      E::::::EEEEEEEEEE   \n");
+    printf("  B:::::::::::::BB       Y:::::::::Y       E:::::::::::::::E     B:::::::::::::BB       Y:::::::::Y       E:::::::::::::::E   \n");
+    printf("  B::::BBBBBB:::::B       Y:::::::Y        E:::::::::::::::E     B::::BBBBBB:::::B       Y:::::::Y        E:::::::::::::::E   \n");
+    printf("  B::::B     B:::::B       Y:::::Y         E::::::EEEEEEEEEE     B::::B     B:::::B       Y:::::Y         E::::::EEEEEEEEEE   \n");
+    printf("  B::::B     B:::::B       Y:::::Y         E:::::E               B::::B     B:::::B       Y:::::Y         E:::::E             \n");
+    printf("  B::::B     B:::::B       Y:::::Y         E:::::E       EEEEEE  B::::B     B:::::B       Y:::::Y         E:::::E       EEEEEE\n");
+    printf("BB:::::BBBBBB::::::B       Y:::::Y       EE::::::EEEEEEEE:::::EBB:::::BBBBBB::::::B       Y:::::Y       EE::::::EEEEEEEE:::::E\n");
+    printf("B:::::::::::::::::B     YYYY:::::YYYY    E::::::::::::::::::::EB:::::::::::::::::B     YYYY:::::YYYY    E::::::::::::::::::::E\n");
+    printf("B::::::::::::::::B      Y:::::::::::Y    E::::::::::::::::::::EB::::::::::::::::B      Y:::::::::::Y    E::::::::::::::::::::E\n");
+    printf("BBBBBBBBBBBBBBBBB       YYYYYYYYYYYYY    EEEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBB       YYYYYYYYYYYYY    EEEEEEEEEEEEEEEEEEEEEE\n");
+    printf("                                                                                                                               \n");
+    printf("------------------------------------------------- [已退出管理系统，感谢使用] -------------------------------------------------------------\n");
 }
+
 
 #endif //CCCCCCC_MENU_H

@@ -22,6 +22,7 @@ struct stuscore {
     double average;         // 平均分
     double sum;             // 总分
 };
+
 struct  stuscore stuscorelib[MAX_STUDENTLIB_LENGTH];				// 定义学生成绩数据库数组
 
 #endif //CCCCCCC_STUDENTLIB_H

@@ -12,7 +12,7 @@ int main()
     log();                                                        //登录账号
     adminSelectChoice();                                          //管理员管理界面
     studentsManager();                                            //学生成绩管理界面
-    showExitScreen();                                             //退出界面
+    showExitScreen();                                             //退出感谢界面
     return 0;
 }
 
