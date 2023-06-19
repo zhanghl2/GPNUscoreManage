@@ -14,12 +14,12 @@
 #include "StudentLib.h"
 
 
-struct stuscore parseDataF(char *data);    //解析首行数据,写入表头
-struct stuscore parseData(char *data);     //解析其他数据
+struct stuscore parseDataF(char *data);                   //解析首行数据,写入表头
+struct stuscore parseData(char *data);                   //解析其他数据
 void calculateAverageAndSum(struct stuscore *student);   //计算平均值和总成绩
-void countAndPrintTxtFiles();                    //读取目录下txt文件
-void readDataFromFile(struct stuscore* students);  //读取txt文件数据
-void readDatabase();                              //读取数据库，导出文件
+void countAndPrintTxtFiles();                           //读取目录下txt文件
+void readDataFromFile(struct stuscore* students);       //读取txt文件数据
+void readDatabase();                                   //读取数据库，导出文件
 
 struct stuscore parseDataF(char *data) {
     data[strcspn(data, "\n")] = '\0';      // 除去行末换行
@@ -203,6 +203,26 @@ void readDataFromFile(struct stuscore* students) {
 
 //导出文件
 void readDatabase() {
+
+    system("cls");
+
+    int tempterm = 0;
+    char tempclass[20];
+    int count = 0;
+
+    printf("请输入你要导出的学期(1.代表第一学期 2.代表第二学期 ):\n");
+    scanf("%d", &tempterm);
+
+    if (tempterm!=1 && tempterm!=2) {
+        printf("输入有误,按任意键返回上级菜单\n");
+        getch();
+        return;
+    }
+
+    printf("请输入你要导出的班级，(输入“全年级”将导出全年级成绩):");
+    scanf("%s", tempclass);
+
+
     system("cls");
     FILE *inputFile = fopen("学生成绩数据库.dat", "rb");
     if (inputFile == NULL) {
@@ -211,7 +231,7 @@ void readDatabase() {
         return;
     }
 
-    FILE *outputFile = fopen("学生成绩数据库.csv", "w");
+    FILE *outputFile = fopen("学生成绩表格.csv", "w");
     if (outputFile == NULL) {
         printf("无法创建输出文件,按任意键返回上级菜单\n");
         fclose(inputFile);
@@ -235,21 +255,40 @@ void readDatabase() {
 
     struct stuscore student;
     while (fread(&student, sizeof(struct stuscore), 1, inputFile) == 1) {
-        fprintf(outputFile, "%s,%d,", student.Class, student.to);
-        fprintf(outputFile, "%lld,%s", student.number, student.name);
-        for (int i = 0; i < student.coursenumber; i++) {
-            fprintf(outputFile, ",%.1f", student.score[i]);
+        if(student.to == tempterm && strcmp(student.Class,tempclass)==0){
+            fprintf(outputFile, "%s,%d,", student.Class, student.to);
+            fprintf(outputFile, "%lld,%s", student.number, student.name);
+            for (int i = 0; i < student.coursenumber; i++) {
+                fprintf(outputFile, ",%.1f", student.score[i]);
+            }
+            for (int i = student.coursenumber; i < coursenumber; i++) {
+                fprintf(outputFile, ",");
+            }
+            fprintf(outputFile, ",%.1f,%.1f\n",student.average, student.sum);
+            count++;
         }
-        for (int i = student.coursenumber; i < coursenumber; i++) {
-            fprintf(outputFile, ",");
+        else if(student.to == tempterm && strcmp(tempclass,"全年级")==0){
+            fprintf(outputFile, "%s,%d,", student.Class, student.to);
+            fprintf(outputFile, "%lld,%s", student.number, student.name);
+            for (int i = 0; i < student.coursenumber; i++) {
+                fprintf(outputFile, ",%.1f", student.score[i]);
+            }
+            for (int i = student.coursenumber; i < coursenumber; i++) {
+                fprintf(outputFile, ",");
+            }
+            fprintf(outputFile, ",%.1f,%.1f\n",student.average, student.sum);
+            count++;
         }
-        fprintf(outputFile, ",%.1f,%.1f\n",student.average, student.sum);
-    }
 
+    }
     fclose(inputFile);
     fclose(outputFile);
-
-    printf("导出完成,文件已保存在-->学生成绩数据库.csv。\n");
+    if (count==0){
+        printf("班级输入有误，请按任意键返回主菜单后重试！\n");
+        getch();
+        return;
+    }
+    printf("导出完成,一共导出%d条数据，文件已保存在-->学生成绩表格.csv。\n",count);
     printf("<按任意键返回上级菜单>\n");
     getch();
 }

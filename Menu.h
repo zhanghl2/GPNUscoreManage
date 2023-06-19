@@ -1,16 +1,14 @@
 
-
 #ifndef CCCCCCC_MENU_H
 #define CCCCCCC_MENU_H
-
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <windows.h>
 
 void showWelcomeScreen();               //显示欢迎界面
-void showAdminScreen();                 //显示管理员界面
-void showMenu();                        //显示主菜单
+void showAdminScreen();                 //显示管理员菜单界面
+void showMenu();                        //显示学生成绩主菜单界面
 void showExitScreen();                  //显示结束画面
 
 void showWelcomeScreen() {
@@ -55,7 +53,7 @@ void showAdminScreen() {
     printf("\t\t||~~~~~~~~~~~~~~~5.进入学生信息管理系统~~~~~~~~||\n");
     printf("\t\t||                                             ||\n");
     printf("\t\t||*********************************************||\n");
-    printf("\t\t	请按数字键1~4，进行相应操作： ");
+    printf("\t\t	请按数字键1~5，进行相应操作： ");
 }
 
 void showMenu() {
@@ -110,6 +108,7 @@ void showExitScreen() {
     printf("BBBBBBBBBBBBBBBBB       YYYYYYYYYYYYY    EEEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBB       YYYYYYYYYYYYY    EEEEEEEEEEEEEEEEEEEEEE\n");
     printf("                                                                                                                               \n");
     printf("------------------------------------------------- [已退出管理系统，感谢使用] -------------------------------------------------------------\n");
+    getch();
 }
 
 

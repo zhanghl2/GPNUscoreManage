@@ -13,11 +13,10 @@
 #include <conio.h>
 
 
-#define MAX_USERS 100
-
-
+#define MAX_USERS 100                               //最大用户数
 #define MAX_USERNAME_LENGTH 20                      //用户名最大长度
 #define MAX_PASSWORD_LENGTH 20                      //密码最大长度
+
 /**************管理员结构体定义********************/
 struct User {
     char username[MAX_USERNAME_LENGTH];

@@ -24,8 +24,8 @@ void studentsManager(){
             case 5: scoredelete(stuscorelib); break;                            //成绩删除
             case 6: classscoresort(stuscorelib);break;                          //成绩排序
             case 7: readDataFromFile(stuscorelib);break;                           //成绩导入
-            case 8: readDatabase();break;                                                    //成绩导出
-            case 9: flag = 1; break;                                                         //退出系统
+            case 8: readDatabase();break;                                                   //成绩导出
+            case 9: flag = 1; break;                                                        //退出系统
             default:printf("\t\t	<没有出现此选项，按任意键重新选择！>"); getch(); break;
         }
         if (flag == 1)break;
